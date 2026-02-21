@@ -52,3 +52,22 @@ window.addEventListener("scroll", () => {
     }, 200);
 });
 
+interactivity: {
+  events: {
+    onHover: {
+      enable: true,
+      mode: "repulse"
+    }
+  },
+  modes: {
+    repulse: {
+      distance: 100,
+      duration: 0.4
+    }
+  }
+}
+
+window.addEventListener("scroll", function () {
+  let scrollY = window.scrollY;
+  pJSDom[0].pJS.particles.move.speed = 2 + scrollY * 0.01;
+});
