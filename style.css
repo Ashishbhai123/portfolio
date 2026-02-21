@@ -155,5 +155,31 @@ section {
     letter-spacing: 5px;
 }
 
+/* MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
 
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-right {
+        margin-top: 30px;
+    }
+
+    .coming-soon {
+        font-size: 40px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav ul {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+}
 
