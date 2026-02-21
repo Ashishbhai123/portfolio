@@ -52,6 +52,9 @@ window.addEventListener("scroll", () => {
     }, 200);
 });
 
-
+window.addEventListener("scroll", function () {
+  let scrollY = window.scrollY;
+  pJSDom[0].pJS.particles.move.speed = 2 + scrollY * 0.01;
+});
 
 
