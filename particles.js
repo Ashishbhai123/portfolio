@@ -67,7 +67,3 @@ interactivity: {
   }
 }
 
-window.addEventListener("scroll", function () {
-  let scrollY = window.scrollY;
-  pJSDom[0].pJS.particles.move.speed = 2 + scrollY * 0.01;
-});
