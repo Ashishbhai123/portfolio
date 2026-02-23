@@ -71,6 +71,11 @@ nav a:hover {
     margin-left: 5%;
     margin-right: auto;
 }
+/* Only Hero left shift */
+.hero-glass {
+    margin-left: 5%;
+    margin-right: auto;
+}
 
 }
 
