@@ -205,3 +205,44 @@ section {
     width: 300px;
     max-width: 100%;
 }
+/* HERO SECTION LAYOUT */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 160px 8%;
+}
+
+/* Glass layout */
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 750px;
+}
+
+/* Coming soon right inside glass */
+.hero-coming {
+    text-align: right;
+}
+
+.coming-soon {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #111;
+}
+
+/* Right video outside glass */
+.hero-video-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-video {
+    width: 420px;
+    max-width: 100%;
+    background: transparent;
+}
