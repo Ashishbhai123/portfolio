@@ -250,12 +250,4 @@ section {
     width: 420px;
     max-width: 100%;
     mix-blend-mode: multiply;
-}.hero-video {
-    width: 420px;
-    border-radius: 20px;
-    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.1));
-}.hero-video {
-    width: 420px;
-    max-width: 100%;
-    border-radius: 20px;
 }
