@@ -62,7 +62,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 160px 20px;   /* EXTRA TOP/BOTTOM SPACE */
+    padding: 160px 20px;
     box-sizing: border-box;
 }
 
@@ -72,23 +72,28 @@ nav a:hover {
     backdrop-filter: blur(15px);
     border-radius: 20px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 750px;
     padding: 80px 60px;
     box-sizing: border-box;
 }
 
-/* ===== HERO LAYOUT ===== */
+/* ===== HERO SECTION ===== */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 160px 8%;
+    flex-wrap: wrap;   /* IMPORTANT */
+}
+
+/* Hero content inside glass */
 .hero-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
-}
-
-/* ONLY HERO LEFT SHIFT */
-.hero-glass {
-    margin-left: 5%;
-    margin-right: auto;
+    gap: 40px;
+    width: 100%;
 }
 
 /* LEFT SIDE */
@@ -119,28 +124,39 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* RIGHT SIDE */
-.hero-right {
+/* COMING SOON */
+.hero-coming {
     flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    text-align: right;
 }
 
 .coming-soon {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 800;
-    color: #111;
     line-height: 1.1;
-    text-align: right;
-    letter-spacing: 3px;
+    color: #111;
+}
+
+/* VIDEO RIGHT SIDE (OUTSIDE GLASS) */
+.hero-video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-video {
+    width: 380px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    mix-blend-mode: multiply; /* remove if using color matched bg */
 }
 
 /* ===== DARK CONTACT SECTION ===== */
 .dark {
     background: #111;
     color: white;
-    padding: 120px 20px;   /* MORE GAP */
+    padding: 120px 20px;
 }
 
 .contact-box {
@@ -155,100 +171,42 @@ section {
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 
-    nav {
-        padding: 10px 20px;
-    }
-
-    .glass {
-        padding: 40px 20px;
-    }
-
-    .section {
-        padding: 140px 15px;  /* keep proper gap */
+    .hero-section {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
     }
 
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
     }
 
     .hero-left {
         text-align: center;
     }
 
-    .hero-right {
-        justify-content: center;
+    .hero-coming {
+        text-align: center;
     }
 
     .coming-soon {
         font-size: 38px;
-        text-align: center;
+    }
+
+    .hero-video {
+        width: 260px;
     }
 
     nav ul {
         gap: 10px;
         font-size: 14px;
     }
-}
-.hero-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 20px;
-}
 
-.hero-video {
-    width: 300px;
-    max-width: 100%;
+    .glass {
+        padding: 40px 20px;
+    }
 }
-/* HERO SECTION LAYOUT */
-.hero-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 160px 8%;
-}
-
-/* Glass layout */
-.hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    max-width: 750px;
-}
-
-/* Coming soon right inside glass */
-.hero-coming {
-    text-align: right;
-}
-
-.coming-soon {
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1.1;
-    color: #111;
-}
-
-/* Right video outside glass */
-.hero-video-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-video {
-    width: 420px;
-    max-width: 100%;
-    background: transparent;
-}
-.hero-video {
-    width: 420px;
-    max-width: 100%;
-    mix-blend-mode: multiply;
-
 
