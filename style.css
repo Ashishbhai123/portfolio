@@ -246,3 +246,8 @@ section {
     max-width: 100%;
     background: transparent;
 }
+.hero-video {
+    width: 420px;
+    max-width: 100%;
+    mix-blend-mode: multiply;
+}
