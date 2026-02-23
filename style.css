@@ -58,13 +58,19 @@ nav a:hover {
 
 /* ===== SECTIONS ===== */
 .section {
+ .section {
     min-height: 100vh;
     display: flex;
-    justify-content: flex-start;  /* LEFT SHIFT */
+    justify-content: center;
     align-items: center;
-    padding-left: 8%;
-}   box-sizing: border-box;
     padding: 140px 20px 100px;
+    box-sizing: border-box;
+}
+/* ONLY HERO SECTION CUSTOM ALIGN */
+#home .glass {
+    margin-left: 5%;
+    margin-right: auto;
+}
 
 }
 
