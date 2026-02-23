@@ -58,25 +58,12 @@ nav a:hover {
 
 /* ===== SECTIONS ===== */
 .section {
- .section {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 140px 20px 100px;
+    padding: 160px 20px;   /* EXTRA TOP/BOTTOM SPACE */
     box-sizing: border-box;
-}
-/* ONLY HERO SECTION CUSTOM ALIGN */
-#home .glass {
-    margin-left: 5%;
-    margin-right: auto;
-}
-/* Only Hero left shift */
-.hero-glass {
-    margin-left: 5%;
-    margin-right: auto;
-}
-
 }
 
 /* ===== GLASS CARD ===== */
@@ -86,7 +73,7 @@ nav a:hover {
     border-radius: 20px;
     width: 100%;
     max-width: 1000px;
-    padding: 80px 60px;  /* little more side spacing */
+    padding: 80px 60px;
     box-sizing: border-box;
 }
 
@@ -95,23 +82,27 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;              /* more breathing space */
+    gap: 60px;
+}
+
+/* ONLY HERO LEFT SHIFT */
+.hero-glass {
+    margin-left: 5%;
+    margin-right: auto;
 }
 
 /* LEFT SIDE */
 .hero-left {
     flex: 1;
-    text-align: left;       /* FORCE LEFT ALIGN */
+    text-align: left;
 }
 
-/* Make heading cleaner */
 .hero-left h1 {
     font-size: 36px;
     line-height: 1.2;
     margin-bottom: 15px;
 }
 
-/* Subtitle */
 .hero-left p {
     font-size: 16px;
     color: #444;
@@ -132,17 +123,16 @@ nav a:hover {
 .hero-right {
     flex: 1;
     display: flex;
-    justify-content: flex-end;   /* SHIFT RIGHT SIDE PROPERLY */
+    justify-content: flex-end;
     align-items: center;
 }
 
-/* Coming Soon Text */
 .coming-soon {
-    font-size: 60px;      /* reduced from 70 */
+    font-size: 60px;
     font-weight: 800;
     color: #111;
     line-height: 1.1;
-    text-align: right;    /* align nicely */
+    text-align: right;
     letter-spacing: 3px;
 }
 
@@ -150,7 +140,7 @@ nav a:hover {
 .dark {
     background: #111;
     color: white;
-    padding: 80px 20px;
+    padding: 120px 20px;   /* MORE GAP */
 }
 
 .contact-box {
@@ -159,10 +149,7 @@ nav a:hover {
     text-align: center;
 }
 
-#contact {
-    margin-top: 100px;
-}
-
+/* SCROLL OFFSET */
 section {
     scroll-margin-top: 120px;
 }
@@ -179,7 +166,7 @@ section {
     }
 
     .section {
-        padding: 120px 15px 80px;
+        padding: 140px 15px;  /* keep proper gap */
     }
 
     .hero-container {
