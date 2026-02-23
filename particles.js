@@ -48,8 +48,8 @@ window.addEventListener("scroll", () => {
 
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-        speedMultiplier = 1; // normal speed
-    }, 200);
+        speedMultiplier = 2; // normal speed
+    }, 300);
 });
 
 window.addEventListener("scroll", function () {
