@@ -72,7 +72,7 @@ nav a:hover {
     backdrop-filter: blur(15px);
     border-radius: 20px;
     width: 100%;
-    max-width: 750px;
+    max-width: 850px;
     padding: 80px 60px;
     box-sizing: border-box;
 }
@@ -82,7 +82,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 120px;
     padding: 160px 8%;
     flex-wrap: wrap;   /* IMPORTANT */
 }
