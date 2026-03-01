@@ -8,7 +8,7 @@ let speedMultiplier = 1;
 let particles = [];
 
 /* 🎯 Create Particles */
-for (let i = 0; i < 120; i++) {
+for (let i = 0; i < 120; i++) {   // thoda kam count (smooth)
     particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -40,15 +40,15 @@ function animate() {
 
 animate();
 
-  Scroll Speed Effect (Smooth)
+/* 🔥 Scroll Speed Effect (Smooth) */
 let scrollTimeout;
 
 window.addEventListener("scroll", () => {
-    speedMultiplier = 2;
+    speedMultiplier = 2;  // scroll pe thoda fast
 
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-        speedMultiplier = 1;
+        speedMultiplier = 1;  // back to normal slow
     }, 200);
 });
 
@@ -57,5 +57,4 @@ window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
-
 
