@@ -12,9 +12,9 @@ for (let i = 0; i < 150; i++) {
     particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2,
-        speedX: (Math.random() - 0.5),
-        speedY: (Math.random() - 0.5)
+        size: Math.random() * 3,
+        speedX: (Math.random() - 0.2),
+        speedY: (Math.random() - 0.2)
     });
 }
 
@@ -48,13 +48,13 @@ window.addEventListener("scroll", () => {
 
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-        speedMultiplier = 2; // normal speed
+        speedMultiplier = 3; // normal speed
     }, 300);
 });
 
 window.addEventListener("scroll", function () {
   let scrollY = window.scrollY;
-  pJSDom[0].pJS.particles.move.speed = 2 + scrollY * 0.01;
+  pJSDom[0].pJS.particles.move.speed = 3 + scrollY * 0.01;
 });
 
 
