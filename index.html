@@ -1,3 +1,52 @@
+
+
+<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <title>My Portfolio</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="style.css"> <link rel="icon" type="image/webp" href="images/favicon.webp"> </head> <body
+
+pasted
+
+
+/* ===== BODY ===== */ body { margin: 0; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; background: #f7efe5; overflow-x: hidden; padding-top: 70px; } /* ===== PARTICLE CANVAS ===== */ canvas { position: fixed; top: 0; left: 0; z-
+
+pasted
+
+
+
+
+Message collapsed
+
+Synthesized Web3 journey narrative with skills into portfolio structure
+Synthesized Web3 journey narrative with skills into portfolio structure
+Bhai dekha portfolio — solid base hai already (glass cards, particles bg, video hero, sab clean lag raha). Ab tera Web3 journey wala content daal deta hoon About section me, ek skills grid ke sath jo achha dikhega glass theme ke saath match karke.
+
+
+Refined timeline and skill tags styling with glass morphism aesthetics
+Refined timeline and skill tags styling with glass morphism aesthetics
+Bhai maine tera Web3 journey content About section me add kar diya hai — timeline style me (2022 se leke abhi tak), har role ke saath uska detail. Neeche skills ka ek clean tag-grid bhi laga diya jo hover pe dark ho jaata hai, tere existing glass + cream theme se perfectly match karta hai.
+
+Kya kiya:
+
+About section ab intro + vertical timeline (Humanity → GAIB → ImpossibleCloud/Ping/P2P.me → Soneium) dikhata hai, left side pe ek subtle line + dot ke sath
+Core Skills neeche pill-shaped tags me, jo mobile pe center ho jaate hain
+Baaki sab (particles, video, contact, JS) waisa hi rakha hai — sirf index.html aur style.css update kiye hain, particles.js untouched hai, wapas apne folder me daal dena
+Bas apne images/ folder aur particles.js file same jagah rakhna jaha ye do files daalega, sab kaam kar jaayega.
+
+
+Index
+Code · HTML
+
+Style
+Code · CSS
+
+Want to be notified when Claude responds?
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Index · HTML
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,9 +104,86 @@
 
 <!-- ABOUT -->
 <section id="about" class="section">
-    <div class="glass">
+    <div class="glass about-glass">
         <h1>About Me</h1>
-        <p>I am building modern my websites with clean UI.</p>
+        <p class="about-intro">
+            My Web3 journey began in 2022, when a friend introduced me to blockchain and decentralized
+            technologies. What started as curiosity soon became a passion for community building,
+            education, and helping users navigate the Web3 ecosystem.
+        </p>
+
+        <div class="journey">
+
+            <div class="journey-item">
+                <span class="journey-year">2022</span>
+                <div class="journey-content">
+                    <h3>Community Ambassador @ Humanity Protocol</h3>
+                    <p>My first role in Web3, where I gained hands-on experience in community moderation,
+                    user support, campaign management, Discord engagement, and educational initiatives.
+                    This experience taught me the importance of building welcoming and active communities.</p>
+                </div>
+            </div>
+
+            <div class="journey-item">
+                <span class="journey-year">2023</span>
+                <div class="journey-content">
+                    <h3>Regional Moderator @ GAIB</h3>
+                    <p>Hosted community events, AMAs and game nights, answered user queries, managed reports,
+                    and worked closely with the team to strengthen community engagement around AI
+                    infrastructure and decentralized finance.</p>
+                </div>
+            </div>
+
+            <div class="journey-item">
+                <span class="journey-year">2023 – 2024</span>
+                <div class="journey-content">
+                    <h3>Contributor @ ImpossibleCloud, Ping Network, P2P.me</h3>
+                    <p>Focused on community growth, educational content, user onboarding, and ecosystem
+                    awareness. Through P2P.me, I also helped onboard merchants and users into crypto
+                    payment solutions, gaining valuable experience in real-world Web3 adoption.</p>
+                </div>
+            </div>
+
+            <div class="journey-item">
+                <span class="journey-year">2024 – Present</span>
+                <div class="journey-content">
+                    <h3>Ecosystem Contributor @ Soneium</h3>
+                    <p>Active contributor to the Soneium ecosystem, helping grow Startale India by creating
+                    educational graphics, banners, and ecosystem content, and engaging with users to make
+                    Soneium more accessible to newcomers.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="about-outro">
+            Beyond community management, I continuously expand my technical skills by learning Discord
+            server management, community automation, Python, HTML, CSS, JavaScript, GitHub, Google Sheets,
+            and basic web development. My mission is simple: educate, onboard, and empower more people to
+            explore Web3 through meaningful content, active community engagement, and long-term ecosystem
+            growth.
+        </p>
+
+        <h2 class="skills-title">Core Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Community Management</span>
+            <span class="skill-tag">Community Moderation</span>
+            <span class="skill-tag">Discord Administration</span>
+            <span class="skill-tag">User Onboarding</span>
+            <span class="skill-tag">X (Twitter) Content Creation</span>
+            <span class="skill-tag">Educational Content</span>
+            <span class="skill-tag">AMA & Event Hosting</span>
+            <span class="skill-tag">Community Growth</span>
+            <span class="skill-tag">Graphic & Banner Design</span>
+            <span class="skill-tag">Google Workspace</span>
+            <span class="skill-tag">Python (Basics)</span>
+            <span class="skill-tag">HTML • CSS • JavaScript</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Web3 Research</span>
+            <span class="skill-tag">Ecosystem Marketing</span>
+            <span class="skill-tag">Relationship Building</span>
+        </div>
+
     </div>
 </section>
 
@@ -73,7 +199,7 @@
 <!-- CONTACT -->
 <section id="contact" class="dark">
     <div class="contact-box">
-        <h2>Let's Connect 🚀</h2>
+        <h2>Contact me</h2>
         <p>The Website is Still Under Processing👇</p>
 
         <div class="social-links">
@@ -110,6 +236,7 @@
                 Discord
             </a>
 
+        </div>
     </div>
 </section>
 <script src="particles.js"></script>

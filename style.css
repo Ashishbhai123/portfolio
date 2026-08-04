@@ -170,6 +170,95 @@ section {
     scroll-margin-top: 120px;
 }
 
+/* ===== ABOUT / JOURNEY ===== */
+.about-glass {
+    max-width: 900px;
+    text-align: left;
+}
+
+.about-intro,
+.about-outro {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.journey {
+    margin: 45px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-left: 2px solid rgba(17,17,17,0.15);
+    padding-left: 30px;
+}
+
+.journey-item {
+    position: relative;
+}
+
+.journey-item::before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #111;
+}
+
+.journey-year {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #8a6d3b;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.journey-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 19px;
+    color: #111;
+}
+
+.journey-content p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.skills-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background: rgba(17,17,17,0.06);
+    border: 1px solid rgba(17,17,17,0.12);
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: 0.25s ease;
+}
+
+.skill-tag:hover {
+    background: #111;
+    color: #f7efe5;
+    transform: translateY(-3px);
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 992px) {
 
@@ -208,6 +297,18 @@ section {
     .glass {
         padding: 40px 20px;
     }
+
+    .about-glass {
+        text-align: center;
+    }
+
+    .journey {
+        text-align: left;
+    }
+
+    .skills-grid {
+        justify-content: center;
+    }
 }
 .coming {
     display: inline-block;
@@ -222,39 +323,6 @@ section {
     .soon {
         margin-left: 0;   /* mobile me normal kar do */
     }
-}
-
-.social-links {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 35px;            /* MORE GAP */
-    flex-wrap: wrap;
-}
-
-.social-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #f7efe5;       /* creamy white */
-    font-weight: 600;
-    padding: 14px 28px;
-    border: 1px solid rgba(247,239,229,0.6);
-    border-radius: 40px;
-    transition: 0.3s ease;
-    font-size: 15px;
-}
-
-.social-btn svg {
-    fill: currentColor;
-}
-
-.social-btn:hover {
-    background: #f7efe5;   /* creamy background */
-    color: #111;           /* black text on hover */
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255,255,255,0.2);
 }
 
 .social-links {
