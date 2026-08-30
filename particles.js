@@ -85,3 +85,50 @@ function animateCursorGlow() {
 }
 
 animateCursorGlow();
+
+// ===== AIRPLANE + PETAL TRAIL =====
+
+function createAirplane() {
+
+    const airplane = document.createElement("div");
+    airplane.className = "airplane";
+    airplane.innerHTML = "✈️";
+
+    airplane.style.top = (Math.random() * 55 + 10) + "%";
+
+    document.body.appendChild(airplane);
+
+    const petalTimer = setInterval(() => {
+
+        const rect = airplane.getBoundingClientRect();
+
+        if (rect.left > -50 && rect.left < window.innerWidth) {
+
+            const petal = document.createElement("div");
+            petal.className = "petal";
+            petal.innerHTML = "🌸";
+
+            petal.style.left = rect.left + "px";
+            petal.style.top = (rect.top + 15) + "px";
+
+            document.body.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, 1800);
+        }
+
+    }, 180);
+
+    setTimeout(() => {
+        clearInterval(petalTimer);
+        airplane.remove();
+    }, 9000);
+}
+
+
+// First airplane
+setTimeout(createAirplane, 3000);
+
+// Every 6 seconds
+setInterval(createAirplane, 6000);
