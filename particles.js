@@ -86,87 +86,72 @@ function animateCursorGlow() {
 
 animateCursorGlow();
 
-// ===== AIRPLANE + PETAL EFFECT =====
+// ===== 3D FLOATING PETALS =====
 
-function createAirplane() {
+function createPetal() {
 
-    const airplane = document.createElement("div");
+    const petal = document.createElement("div");
 
-    airplane.innerHTML = "✈";
-    airplane.style.position = "fixed";
-    airplane.style.left = "-70px";
-    airplane.style.top = (Math.random() * 85 + 5) + "vh";
-    airplane.style.fontSize = "34px";
-    airplane.style.zIndex = "9998";
-    airplane.style.pointerEvents = "none";
-    airplane.style.display = "block";
-    airplane.style.opacity = "1";
+    petal.innerHTML = "🌸";
+    petal.className = "floating-petal";
 
-    document.body.appendChild(airplane);
+    // Random starting position
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.top = "-40px";
 
-    let x = -70;
-    const speed = 3.5;
+    // Random size
+    const size = Math.random() * 12 + 10;
+    petal.style.fontSize = size + "px";
 
-    const fly = setInterval(() => {
+    // Random depth / blur
+    const depth = Math.random();
 
-        x += speed;
-        airplane.style.left = x + "px";
+    if (depth < 0.3) {
+        petal.style.filter = "blur(2px)";
+        petal.style.opacity = "0.35";
+    } else if (depth < 0.6) {
+        petal.style.filter = "blur(1px)";
+        petal.style.opacity = "0.55";
+    } else {
+        petal.style.opacity = "0.8";
+    }
 
-        // 🌸 Petal trail
-        if (Math.random() < 0.45) {
+    document.body.appendChild(petal);
 
-            const petal = document.createElement("div");
+    // Random movement
+    const duration = Math.random() * 5000 + 7000;
+    const drift = (Math.random() - 0.5) * 350;
+    const rotate = Math.random() * 720 - 360;
 
-            petal.innerHTML = "🌸";
-
-            petal.style.position = "fixed";
-            petal.style.left = (x - 5) + "px";
-            petal.style.top =
-                (parseFloat(airplane.style.top) + 3) + "vh";
-
-            petal.style.fontSize = "13px";
-            petal.style.zIndex = "9997";
-            petal.style.pointerEvents = "none";
-            petal.style.opacity = "0.8";
-
-            document.body.appendChild(petal);
-
-            let petalY = 0;
-            let petalX = x - 5;
-            let opacity = 0.8;
-
-            const fall = setInterval(() => {
-
-                petalY += 1;
-                petalX -= 0.5;
-                opacity -= 0.025;
-
-                petal.style.left = petalX + "px";
-                petal.style.transform =
-                    `translateY(${petalY}px) rotate(${petalY * 4}deg)`;
-                petal.style.opacity = opacity;
-
-                if (opacity <= 0) {
-                    clearInterval(fall);
-                    petal.remove();
-                }
-
-            }, 40);
+    petal.animate(
+        [
+            {
+                transform:
+                    "translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg)"
+            },
+            {
+                transform:
+                    `translate3d(${drift}px, 110vh, 0)
+                     rotateX(${rotate}deg)
+                     rotateY(${rotate}deg)
+                     rotateZ(${rotate}deg)`
+            }
+        ],
+        {
+            duration: duration,
+            easing: "ease-in-out",
+            iterations: 1
         }
+    );
 
-        // Screen cross karne ke baad remove
-        if (x > window.innerWidth + 100) {
-            clearInterval(fly);
-            airplane.remove();
-        }
-
-    }, 16);
+    setTimeout(() => {
+        petal.remove();
+    }, duration);
 }
 
 
-// ✈️ First airplane
-setTimeout(createAirplane, 2000);
+// 🌸 Start slowly
+setTimeout(createPetal, 2000);
 
-
-// ✈️ Every 6 seconds
-setInterval(createAirplane, 6000);
+// 🌸 New petal every 1.2 seconds
+setInterval(createPetal, 1200);
