@@ -64,35 +64,24 @@ const cursorGlow = document.createElement("div");
 cursorGlow.className = "cursor-glow";
 document.body.appendChild(cursorGlow);
 
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-let glowX = mouseX;
-let glowY = mouseY;
+let mouseX = 0;
+let mouseY = 0;
+let glowX = 0;
+let glowY = 0;
 
 window.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-
-    cursorGlow.style.opacity = "1";
 });
 
 function animateCursorGlow() {
+    glowX += (mouseX - glowX) * 0.12;
+    glowY += (mouseY - glowY) * 0.12;
 
-    glowX += (mouseX - glowX) * 0.15;
-    glowY += (mouseY - glowY) * 0.15;
-
-    cursorGlow.style.left = glowX + "px";
-    cursorGlow.style.top = glowY + "px";
+    cursorGlow.style.transform =
+        `translate(${glowX - 150}px, ${glowY - 150}px)`;
 
     requestAnimationFrame(animateCursorGlow);
 }
 
 animateCursorGlow();
-
-window.addEventListener("mouseleave", () => {
-    cursorGlow.style.opacity = "0";
-});
-
-window.addEventListener("mouseenter", () => {
-    cursorGlow.style.opacity = "1";
-});

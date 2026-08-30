@@ -357,35 +357,29 @@ section {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(255,255,255,0.2);
 }
-/* ===== CURSOR GLOW ===== */
+/* ===== CURSOR LIGHT ===== */
 
 .cursor-glow {
     position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 280px;
-    height: 280px;
-
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
 
     pointer-events: none;
-
-    z-index: 99999;
+    z-index: 999999;
 
     background: radial-gradient(
         circle,
-        rgba(157, 189, 255, 0.22) 0%,
-        rgba(157, 189, 255, 0.12) 25%,
-        rgba(157, 189, 255, 0.05) 45%,
-        transparent 70%
+        rgba(157, 189, 255, 0.20) 0%,
+        rgba(157, 189, 255, 0.10) 30%,
+        rgba(157, 189, 255, 0.04) 50%,
+        transparent 72%
     );
 
-    transform: translate(-50%, -50%);
+    filter: blur(4px);
 
-    opacity: 0;
+    left: 0;
+    top: 0;
 
-    transition: opacity 0.25s ease;
-
-    filter: blur(8px);
+    transition: opacity 0.15s ease;
 }
