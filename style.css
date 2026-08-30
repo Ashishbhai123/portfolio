@@ -358,22 +358,34 @@ section {
     box-shadow: 0 8px 25px rgba(255,255,255,0.2);
 }
 /* ===== CURSOR GLOW ===== */
+
 .cursor-glow {
     position: fixed;
-    width: 220px;
-    height: 220px;
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    height: 280px;
+
     border-radius: 50%;
+
     pointer-events: none;
-    z-index: 9999;
+
+    z-index: 99999;
 
     background: radial-gradient(
         circle,
-        rgba(157, 189, 255, 0.18) 0%,
-        rgba(157, 189, 255, 0.08) 35%,
-        rgba(157, 189, 255, 0) 70%
+        rgba(157, 189, 255, 0.22) 0%,
+        rgba(157, 189, 255, 0.12) 25%,
+        rgba(157, 189, 255, 0.05) 45%,
+        transparent 70%
     );
 
     transform: translate(-50%, -50%);
+
     opacity: 0;
+
     transition: opacity 0.25s ease;
+
+    filter: blur(8px);
 }
