@@ -95,7 +95,7 @@ function createAirplane() {
     airplane.innerHTML = "✈";
     airplane.style.position = "fixed";
     airplane.style.left = "-70px";
-    airplane.style.top = (Math.random() * 45 + 15) + "vh";
+    airplane.style.top = (Math.random() * 85 + 5) + "vh";
     airplane.style.fontSize = "34px";
     airplane.style.zIndex = "9998";
     airplane.style.pointerEvents = "none";
