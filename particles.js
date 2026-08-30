@@ -86,49 +86,87 @@ function animateCursorGlow() {
 
 animateCursorGlow();
 
-// ===== AIRPLANE + PETAL TRAIL =====
+// ===== AIRPLANE + PETAL EFFECT =====
 
 function createAirplane() {
 
     const airplane = document.createElement("div");
-    airplane.className = "airplane";
-    airplane.innerHTML = "✈️";
 
-    airplane.style.top = (Math.random() * 55 + 10) + "%";
+    airplane.innerHTML = "✈";
+    airplane.style.position = "fixed";
+    airplane.style.left = "-70px";
+    airplane.style.top = (Math.random() * 45 + 15) + "vh";
+    airplane.style.fontSize = "34px";
+    airplane.style.zIndex = "9998";
+    airplane.style.pointerEvents = "none";
+    airplane.style.display = "block";
+    airplane.style.opacity = "1";
 
     document.body.appendChild(airplane);
 
-    const petalTimer = setInterval(() => {
+    let x = -70;
+    const speed = 3.5;
 
-        const rect = airplane.getBoundingClientRect();
+    const fly = setInterval(() => {
 
-        if (rect.left > -50 && rect.left < window.innerWidth) {
+        x += speed;
+        airplane.style.left = x + "px";
+
+        // 🌸 Petal trail
+        if (Math.random() < 0.45) {
 
             const petal = document.createElement("div");
-            petal.className = "petal";
+
             petal.innerHTML = "🌸";
 
-            petal.style.left = rect.left + "px";
-            petal.style.top = (rect.top + 15) + "px";
+            petal.style.position = "fixed";
+            petal.style.left = (x - 5) + "px";
+            petal.style.top =
+                (parseFloat(airplane.style.top) + 3) + "vh";
+
+            petal.style.fontSize = "13px";
+            petal.style.zIndex = "9997";
+            petal.style.pointerEvents = "none";
+            petal.style.opacity = "0.8";
 
             document.body.appendChild(petal);
 
-            setTimeout(() => {
-                petal.remove();
-            }, 1800);
+            let petalY = 0;
+            let petalX = x - 5;
+            let opacity = 0.8;
+
+            const fall = setInterval(() => {
+
+                petalY += 1;
+                petalX -= 0.5;
+                opacity -= 0.025;
+
+                petal.style.left = petalX + "px";
+                petal.style.transform =
+                    `translateY(${petalY}px) rotate(${petalY * 4}deg)`;
+                petal.style.opacity = opacity;
+
+                if (opacity <= 0) {
+                    clearInterval(fall);
+                    petal.remove();
+                }
+
+            }, 40);
         }
 
-    }, 180);
+        // Screen cross karne ke baad remove
+        if (x > window.innerWidth + 100) {
+            clearInterval(fly);
+            airplane.remove();
+        }
 
-    setTimeout(() => {
-        clearInterval(petalTimer);
-        airplane.remove();
-    }, 9000);
+    }, 16);
 }
 
 
-// First airplane
-setTimeout(createAirplane, 3000);
+// ✈️ First airplane
+setTimeout(createAirplane, 2000);
 
-// Every 6 seconds
+
+// ✈️ Every 6 seconds
 setInterval(createAirplane, 6000);
