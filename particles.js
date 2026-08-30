@@ -58,3 +58,37 @@ window.addEventListener("resize", () => {
     canvas.height = window.innerHeight;
 });
 
+// ===== CURSOR GLOW EFFECT =====
+
+const cursorGlow = document.createElement("div");
+cursorGlow.className = "cursor-glow";
+document.body.appendChild(cursorGlow);
+
+let mouseX = 0;
+let mouseY = 0;
+let glowX = 0;
+let glowY = 0;
+
+window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorGlow.style.opacity = "1";
+});
+
+function animateCursorGlow() {
+    glowX += (mouseX - glowX) * 0.12;
+    glowY += (mouseY - glowY) * 0.12;
+
+    cursorGlow.style.left = glowX + "px";
+    cursorGlow.style.top = glowY + "px";
+
+    requestAnimationFrame(animateCursorGlow);
+}
+
+animateCursorGlow();
+
+window.addEventListener("mouseleave", () => {
+    cursorGlow.style.opacity = "0";
+});
+
