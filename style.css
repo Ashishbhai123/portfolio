@@ -665,6 +665,18 @@ section {
         scale(1.02);
 }
 
+.id-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.id-card.flipped:hover {
+    transform:
+        rotateY(175deg)
+        rotateX(3deg)
+        translateY(-5px)
+        scale(1.02);
+}
+
 .id-card.flipped:hover {
     transform:
         rotateY(185deg)

@@ -160,13 +160,57 @@ setInterval(createPetal, 1200);
 // 🪪 3D ID CARD FLIP
 // ========================================
 
+// ========================================
+// 🪪 3D ID CARD - AUTO FLIP BACK
+// ========================================
+
 const idCard = document.getElementById("idCard");
+
+let flipTimer;
 
 if (idCard) {
 
+    // 🖱️ Desktop - mouse enter
+    idCard.addEventListener("mouseenter", () => {
+
+        clearTimeout(flipTimer);
+
+        idCard.classList.add("flipped");
+
+    });
+
+
+    // 🖱️ Mouse leave
+    idCard.addEventListener("mouseleave", () => {
+
+        clearTimeout(flipTimer);
+
+        flipTimer = setTimeout(() => {
+
+            idCard.classList.remove("flipped");
+
+        }, 2500); // 2.5 seconds
+
+    });
+
+
+    // 📱 Mobile / Touch
     idCard.addEventListener("click", () => {
 
+        clearTimeout(flipTimer);
+
         idCard.classList.toggle("flipped");
+
+        // Agar back side par hai
+        if (idCard.classList.contains("flipped")) {
+
+            flipTimer = setTimeout(() => {
+
+                idCard.classList.remove("flipped");
+
+            }, 2500);
+
+        }
 
     });
 
