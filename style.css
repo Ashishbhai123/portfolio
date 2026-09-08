@@ -657,26 +657,24 @@ section {
    HOVER 3D FEEL
 ======================================== */
 
-.id-card:hover {
-    transform:
-        rotateY(-5deg)
-        rotateX(3deg)
-        translateY(-5px)
-        scale(1.02);
+/* ===== ID CARD FLIP ===== */
+
+.id-card {
+    transform: rotateY(0deg);
 }
 
 .id-card.flipped {
     transform: rotateY(180deg);
 }
 
-.id-card.flipped:hover {
+/* Normal hover - only slight lift */
+.id-card:not(.flipped):hover {
     transform:
-        rotateY(175deg)
-        rotateX(3deg)
-        translateY(-5px)
+        rotateY(-3deg)
+        rotateX(2deg)
+        translateY(-4px)
         scale(1.02);
 }
-
 .id-card.flipped:hover {
     transform:
         rotateY(185deg)
