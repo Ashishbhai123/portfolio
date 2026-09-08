@@ -155,3 +155,19 @@ setTimeout(createPetal, 2000);
 
 // 🌸 New petal every 1.2 seconds
 setInterval(createPetal, 1200);
+
+// ========================================
+// 🪪 3D ID CARD FLIP
+// ========================================
+
+const idCard = document.getElementById("idCard");
+
+if (idCard) {
+
+    idCard.addEventListener("click", () => {
+
+        idCard.classList.toggle("flipped");
+
+    });
+
+}
