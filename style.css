@@ -719,3 +719,278 @@ section {
 .id-card-back .soon-card {
     display: none !important;
 }
+/* ==========================================
+   ASHISH WEB3 ID — PREMIUM GLASS DESIGN
+========================================== */
+
+.id-card-front {
+    position: absolute;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 22px;
+    color: #10265d;
+
+    background:
+        radial-gradient(
+            circle at 95% 20%,
+            rgba(69, 158, 255, 0.36),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 100%,
+            rgba(112, 185, 255, 0.30),
+            transparent 42%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(248, 252, 255, 0.98),
+            rgba(219, 235, 255, 0.96) 55%,
+            rgba(191, 220, 255, 0.96)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.95),
+        inset 0 0 25px rgba(75, 151, 255, 0.12),
+        0 0 22px rgba(82, 157, 255, 0.16);
+}
+
+/* Soft holographic light */
+.id-card-front::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 15%,
+            rgba(255, 255, 255, 0.40) 45%,
+            transparent 65%
+        );
+
+    opacity: 0.8;
+}
+
+/* Holographic globe */
+.id-card-front::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+
+    width: 135px;
+    height: 135px;
+    right: -25px;
+    top: 42px;
+    border-radius: 50%;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 13px,
+            rgba(48, 142, 255, 0.12) 14px 15px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 13px,
+            rgba(48, 142, 255, 0.12) 14px 15px
+        ),
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(95, 183, 255, 0.48),
+            rgba(39, 116, 244, 0.14) 55%,
+            transparent 72%
+        );
+
+    border: 1px solid rgba(66, 149, 255, 0.22);
+    box-shadow: inset 0 0 22px rgba(59, 145, 255, 0.18);
+    opacity: 0.8;
+}
+
+/* Keep card content above the effects */
+.id-card-front > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.id-header {
+    color: #2369db;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 18px;
+}
+
+/* Profile photo */
+.id-photo {
+    border: 3px solid rgba(255, 255, 255, 0.98);
+    border-radius: 17px;
+
+    box-shadow:
+        0 0 0 2px rgba(69, 157, 255, 0.28),
+        0 0 15px rgba(67, 155, 255, 0.38),
+        0 8px 20px rgba(28, 74, 150, 0.20);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.id-card:not(.flipped):hover .id-photo {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 0 2px rgba(69, 157, 255, 0.4),
+        0 0 22px rgba(67, 155, 255, 0.55),
+        0 10px 22px rgba(28, 74, 150, 0.22);
+}
+
+/* Name */
+.id-info h3 {
+    color: #10265d;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Details */
+.id-info p {
+    color: #405b91;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Footer */
+.id-footer {
+    color: #3975ce;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.id-footer strong {
+    color: #173675;
+    font-weight: 800;
+}
+
+/* Smooth card movement */
+.id-card {
+    box-shadow: 0 20px 35px rgba(49, 100, 177, 0.14);
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+    .id-card-front {
+        padding: 18px;
+    }
+
+    .id-card-front::after {
+        width: 100px;
+        height: 100px;
+        right: -20px;
+        top: 45px;
+    }
+
+    .id-main {
+        gap: 14px;
+    }
+}
+
+/* ==========================================
+   DARK THEME — add body.dark-mode to activate
+========================================== */
+
+body.dark-mode .id-card-front {
+    color: #e5f2ff;
+
+    background:
+        radial-gradient(
+            circle at 95% 15%,
+            rgba(0, 180, 255, 0.30),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 5% 100%,
+            rgba(76, 79, 255, 0.24),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #101a30,
+            #14294a 55%,
+            #102b48
+        );
+
+    border-color: rgba(114, 205, 255, 0.42);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.10),
+        inset 0 0 28px rgba(44, 160, 255, 0.10),
+        0 0 25px rgba(0, 174, 255, 0.16);
+}
+
+body.dark-mode .id-card-front::before {
+    background: linear-gradient(
+        115deg,
+        transparent 15%,
+        rgba(100, 210, 255, 0.10) 45%,
+        transparent 65%
+    );
+}
+
+body.dark-mode .id-card-front::after {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 13px,
+            rgba(73, 205, 255, 0.15) 14px 15px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 13px,
+            rgba(73, 205, 255, 0.15) 14px 15px
+        ),
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(0, 194, 255, 0.36),
+            rgba(47, 80, 255, 0.12) 55%,
+            transparent 72%
+        );
+
+    border-color: rgba(69, 207, 255, 0.30);
+}
+
+body.dark-mode .id-header {
+    color: #68caff;
+}
+
+body.dark-mode .id-info h3 {
+    color: #f0f7ff;
+    text-shadow: 0 0 14px rgba(53, 180, 255, 0.16);
+}
+
+body.dark-mode .id-info p {
+    color: #b1c9ed;
+}
+
+body.dark-mode .id-footer {
+    color: #81cfff;
+}
+
+body.dark-mode .id-footer strong {
+    color: #e4f6ff;
+}
+
+body.dark-mode .id-photo {
+    border-color: #eaf7ff;
+    box-shadow:
+        0 0 0 2px rgba(65, 200, 255, 0.38),
+        0 0 18px rgba(0, 180, 255, 0.30);
+}
+
+body.dark-mode .flip-hint {
+    color: #9dbde8;
+}
