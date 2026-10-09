@@ -1623,3 +1623,54 @@ body.dark-theme .contact-box {
         font-size: 20px;
     }
 }
+
+/* ===== DARK THEME READABILITY FIX ===== */
+
+body.dark-theme .journey-year {
+    color: #8dbbff;
+}
+
+body.dark-theme .journey-content h3 {
+    color: #e5edff;
+}
+
+body.dark-theme .journey-content p,
+body.dark-theme .about-intro,
+body.dark-theme .about-outro {
+    color: #cbd5e8;
+}
+
+body.dark-theme .skills-title {
+    color: #edf3ff;
+}
+
+body.dark-theme .skill-tag {
+    background: rgba(111, 153, 220, 0.14);
+    color: #dce8ff;
+    border: 1px solid rgba(145, 180, 240, 0.24);
+}
+
+body.dark-theme .journey-item::before {
+    background: #8dbbff;
+}
+
+body.dark-theme .journey::before {
+    background: rgba(141, 187, 255, 0.35);
+}
+
+/* Keep the character visible on the dark background */
+body.dark-theme .hero-video {
+    filter: brightness(1.12) contrast(1.04);
+}
+
+/* Smooth theme transition */
+body,
+nav,
+.glass,
+.skill-tag,
+.journey-content h3,
+.journey-content p {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
