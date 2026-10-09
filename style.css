@@ -1090,3 +1090,41 @@ body.dark-mode .flip-hint {
         max-width: 100%;
     }
 }
+/* Fix ID card footer overlap */
+.id-card-front .id-footer {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.id-card-front .id-footer span {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.id-card-front .id-footer strong {
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* Keep photo and text above decorative effects */
+.id-card-front .id-main {
+    position: relative;
+    z-index: 2;
+}
+
+.id-card-front .id-photo {
+    flex-shrink: 0;
