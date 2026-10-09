@@ -1520,3 +1520,106 @@ body.dark-mode .flip-hint {
         animation: none !important;
     }
 }
+/* ===== THEME TOGGLE BUTTON ===== */
+
+.theme-switch-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(100, 120, 160, 0.25);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.65);
+    color: #253858;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(-12deg) scale(1.08);
+    background: rgba(180, 210, 255, 0.5);
+}
+
+/* ===== DARK THEME ===== */
+
+body.dark-theme {
+    background-color: #101522;
+    color: #edf3ff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme nav {
+    background: rgba(17, 24, 39, 0.94);
+    color: #edf3ff;
+    border-bottom: 1px solid rgba(140, 170, 220, 0.12);
+}
+
+body.dark-theme nav a {
+    color: #edf3ff;
+}
+
+body.dark-theme .glass {
+    background: rgba(24, 33, 52, 0.94);
+    color: #edf3ff;
+    border: 1px solid rgba(145, 175, 230, 0.15);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.22);
+}
+
+body.dark-theme .hero-container,
+body.dark-theme .about-glass,
+body.dark-theme #projects .glass {
+    background: rgba(24, 33, 52, 0.94);
+    color: #edf3ff;
+}
+
+body.dark-theme .hero-left p,
+body.dark-theme .about-glass p,
+body.dark-theme #projects p {
+    color: #c3cee0;
+}
+
+body.dark-theme .theme-toggle {
+    background: #263650;
+    color: #ffe08a;
+    border-color: rgba(180, 205, 255, 0.25);
+}
+
+body.dark-theme .project-links a {
+    color: #edf3ff;
+}
+
+body.dark-theme .project-links a:hover {
+    color: #79b5ff;
+}
+
+/* Keep the blue ID card design intact */
+body.dark-theme .id-card-front {
+    color: #10264f;
+}
+
+/* Dark theme for contact section */
+body.dark-theme #contact {
+    background: #0b101c;
+    color: #edf3ff;
+}
+
+body.dark-theme .contact-box {
+    color: #edf3ff;
+}
+
+/* Mobile toggle */
+@media (max-width: 600px) {
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+}

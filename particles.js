@@ -215,3 +215,47 @@ if (idCard) {
     });
 
 }
+/* ===== LIGHT / DARK THEME SWITCH ===== */
+
+(() => {
+    const toggle = document.getElementById("themeToggle");
+    const icon = document.getElementById("themeIcon");
+
+    if (!toggle || !icon) return;
+
+    function applyTheme(theme) {
+        const isDark = theme === "dark";
+
+        document.body.classList.toggle("dark-theme", isDark);
+        icon.textContent = isDark ? "☀" : "☾";
+
+        toggle.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light theme" : "Switch to dark theme"
+        );
+    }
+
+    let savedTheme = "light";
+
+    try {
+        savedTheme = localStorage.getItem("portfolio-theme") || "light";
+    } catch (error) {
+        savedTheme = "light";
+    }
+
+    applyTheme(savedTheme);
+
+    toggle.addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("dark-theme")
+            ? "light"
+            : "dark";
+
+        applyTheme(nextTheme);
+
+        try {
+            localStorage.setItem("portfolio-theme", nextTheme);
+        } catch (error) {
+            // Theme still works if browser storage is unavailable.
+        }
+    });
+})();
