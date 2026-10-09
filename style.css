@@ -1126,5 +1126,46 @@ body.dark-mode .flip-hint {
     z-index: 2;
 }
 
+/* Restore compact hero layout */
+.hero-section {
+    gap: 30px;
+    padding: 90px 5%;
+    align-items: center;
+}
+
+.hero-container {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 1050px;
+    min-width: 0;
+    gap: 28px;
+}
+
+.hero-left {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.hero-coming {
+    flex: 0 1 360px;
+    min-width: 0;
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 90px 20px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-left,
+    .hero-coming {
+        width: 100%;
+    }
+}
+
 .id-card-front .id-photo {
     flex-shrink: 0;
