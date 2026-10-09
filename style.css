@@ -1416,3 +1416,107 @@ body.dark-mode .flip-hint {
         gap: 8px 9px;
     }
 }
+/* ===== ANIMATED BLUE ID CARD ===== */
+
+.id-card-front {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(
+        125deg,
+        #f5faff 0%,
+        #dcecff 30%,
+        #b9d9ff 55%,
+        #e9f4ff 75%,
+        #c7e2ff 100%
+    ) !important;
+    background-size: 250% 250% !important;
+    animation: blueCardFlow 9s ease-in-out infinite;
+}
+
+/* Moving soft blue energy glow */
+.id-card-front::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 30% 45%,
+            rgba(69, 151, 255, 0.28),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 75% 55%,
+            rgba(116, 190, 255, 0.38),
+            transparent 35%
+        );
+
+    animation: blueEnergyMove 8s ease-in-out infinite alternate;
+}
+
+/* Gentle glass shine */
+.id-card-front::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -75%;
+    width: 45%;
+    height: 220%;
+    z-index: 5;
+    pointer-events: none;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.32),
+        transparent
+    );
+
+    transform: rotate(22deg);
+    animation: blueCardShine 7s ease-in-out infinite;
+}
+
+/* Keep card content above the effects */
+.id-card-front > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes blueCardFlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes blueEnergyMove {
+    0% {
+        transform: translate(-4%, -2%) scale(0.95);
+    }
+    100% {
+        transform: translate(5%, 3%) scale(1.08);
+    }
+}
+
+@keyframes blueCardShine {
+    0%, 65% {
+        left: -75%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .id-card-front,
+    .id-card-front::before,
+    .id-card-front::after {
+        animation: none !important;
+    }
+}
