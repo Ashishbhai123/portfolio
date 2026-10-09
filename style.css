@@ -713,12 +713,8 @@ section {
     }
 }
 
-/* ===== MINIMAL BLURRED CARD BACK ===== */
-
+/* Blank card back */
 .id-card-back {
-    position: absolute;
-    overflow: hidden;
-
     background: linear-gradient(
         135deg,
         rgba(247, 239, 229, 0.96),
@@ -727,20 +723,9 @@ section {
 
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: inherit;
-
-    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.35);
 }
 
-/* Hide everything on the back */
-.id-card-back > * {
-    display: none !important;
-}
-
-/* Remove extra text and decoration */
-.id-card-back::after {
-    content: none !important;
+/* Hide all content on back side */
+.id-card-back .soon-card {
     display: none !important;
 }
