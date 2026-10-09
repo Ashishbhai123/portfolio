@@ -994,3 +994,24 @@ body.dark-mode .id-photo {
 body.dark-mode .flip-hint {
     color: #9dbde8;
 }
+/* Remove holographic globe from card front */
+.id-card-front::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Keep ID card centered in its column */
+.hero-coming {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    perspective: 1200px;
+}
+
+.id-card {
+    flex-shrink: 0;
+    margin: 0 auto;
+}
