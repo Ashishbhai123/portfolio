@@ -1169,3 +1169,68 @@ body.dark-mode .flip-hint {
 
 .id-card-front .id-photo {
     flex-shrink: 0;
+
+/* ===== DELHI GLOBE - BACK ONLY ===== */
+
+.id-card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        #081b3b,
+        #102d5b,
+        #07152d
+    ) !important;
+}
+
+.delhi-back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.delhi-globe {
+    width: 100%;
+    height: 145px;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 8px rgba(0, 174, 255, 0.3));
+}
+
+.delhi-location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #c5f3ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.location-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #54e5ff;
+    box-shadow: 0 0 8px #00bfff;
+}
+
+.delhi-footer {
+    margin-top: 7px;
+    color: #86bde8;
+    font-size: 7px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .delhi-globe {
+        height: 125px;
+    }
+}
