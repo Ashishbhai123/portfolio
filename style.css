@@ -417,14 +417,9 @@ section {
     height: 220px;
     position: relative;
     cursor: pointer;
-
     transform-style: preserve-3d;
-
+    -webkit-transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-
-    filter:
-        drop-shadow(0 20px 25px rgba(0,0,0,0.18));
-
     user-select: none;
 }
 
@@ -676,13 +671,8 @@ section {
         scale(1.02);
 }
 .id-card.flipped:hover {
-    transform:
-        rotateY(185deg)
-        rotateX(3deg)
-        translateY(-5px)
-        scale(1.02);
+    transform: rotateY(180deg);
 }
-
 
 /* ========================================
    MOBILE
