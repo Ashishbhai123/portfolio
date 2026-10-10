@@ -1698,8 +1698,7 @@ body.dark-theme .hero-video {
 }
 
 /* Keep the character area clear */
-body.dark-theme .hero-video-wrapper::before,
-body.dark-theme .hero-video-wrapper::after {
-    opacity: 0;
-    pointer-events: none;
+body.dark-theme .hero-video {
+    filter: none;
+    opacity: 1;
 }
