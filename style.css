@@ -1674,3 +1674,32 @@ nav,
                 color 0.3s ease,
                 border-color 0.3s ease;
 }
+/* ===== FIX HERO CHARACTER VISIBILITY ===== */
+
+.hero-video-wrapper {
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+}
+
+.hero-video {
+    position: relative;
+    z-index: 1;
+    display: block;
+    opacity: 1;
+    filter: none;
+    mix-blend-mode: normal;
+}
+
+/* Dark mode: brighten the character */
+body.dark-theme .hero-video {
+    filter: brightness(1.8) contrast(1.08) saturate(1.15);
+    opacity: 1;
+}
+
+/* Keep the character area clear */
+body.dark-theme .hero-video-wrapper::before,
+body.dark-theme .hero-video-wrapper::after {
+    opacity: 0;
+    pointer-events: none;
+}
